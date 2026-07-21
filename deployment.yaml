@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: hello-world-java
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: hello-world-java
+
+  template:
+    metadata:
+      labels:
+        app: hello-world-java
+
+    spec:
+      containers:
+      - name: hello-world-java
+        image: asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/hello-world-java/hello-world-java:latest
+        imagePullPolicy: Always
