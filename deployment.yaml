@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: hello-world-java
-        image: asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/hello-world-java/hello-world-java:latest
+        image: asia-south1-docker.pkg.dev/hello-world-java-502611/hello-world-java/hello-world-java:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

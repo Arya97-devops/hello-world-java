@@ -56,8 +56,14 @@ jobs:
           kubectl rollout status deployment/hello-world-java --timeout=120s
 
       - name: Check Pods status
+        if: always()
         run: |
           kubectl get pods
+
+      - name: Describe Pods
+        if: always()
+        run: |
+          kubectl describe pods
 
       - name: Check Deployments
         run: |
